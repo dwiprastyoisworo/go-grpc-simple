@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package address;
+
+option go_package = "proto/address";
+
+service AddressService {
+  rpc GetAddressByUserID(AddressRequest) returns (AddressResponse) {}
+}
+
+message AddressRequest {
+  string user_id = 1;
+}
+
+message AddressResponse {
+  string user_id = 1;
+  string street = 2;
+  string city = 3;
+  string zip_code = 4;
+}
